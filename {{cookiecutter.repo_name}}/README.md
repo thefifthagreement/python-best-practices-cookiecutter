@@ -18,4 +18,4 @@ pre-commit install -t pre-push
 ```
 
 ## Credits
-This package was created with Cookiecutter and based on the [sourcery-ai/python-best-practices-cookiecutter](https://github.com/sourcery-ai/python-best-practices-cookiecutter) project template.
+This package was created with Cookiecutter and the [thefifthagreement/python-best-practices-cookiecutter](https://github.com/thefifthagreement/python-best-practices-cookiecutter.git) project template.
