@@ -2,13 +2,20 @@
 
 ## Setup
 ```sh
-# Install dependencies
-pipenv install --dev
+# create a new virtual env
+mkvirtualenv {{cookiecutter.project_name}}
+
+# Install and lock dependencies
+poetry install
 
 # Setup pre-commit and pre-push hooks
-pipenv run pre-commit install -t pre-commit
-pipenv run pre-commit install -t pre-push
+pre-commit install -t pre-commit
+pre-commit install -t pre-push
+
+# Test the project (compute the 10th element of the Fibonnaci suite)
+{{cookiecutter.project_name}} 10 
+# should return 55
 ```
 
 ## Credits
-This package was created with Cookiecutter and the [sourcery-ai/python-best-practices-cookiecutter](https://github.com/sourcery-ai/python-best-practices-cookiecutter) project template.
+This package was created with Cookiecutter and based on the [sourcery-ai/python-best-practices-cookiecutter](https://github.com/sourcery-ai/python-best-practices-cookiecutter) project template.

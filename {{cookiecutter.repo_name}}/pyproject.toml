@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "{{cookiecutter.repo_name}}"
+version = "{{cookiecutter.version}}"
+description = "{{cookiecutter.friendly_name}}"
+authors = ["{{cookiecutter.author}} <{{cookiecutter.email}}>"]
+license = "{{cookiecutter.license}}"
+
+[tool.poetry.dependencies]
+python = "^{python_version}"
+click = ">=8.1.7"
+
+[tool.poetry.dev-dependencies]
+black = "^24.2.0"
+flake8 = "^7.0.0"
+isort = "^5.13.2"
+mypy = "^1.8.0"
+pre-commit = "^3.6.2"
+pytest = "^8.0.2"
+pytest-cov = "^4.1.0"
+
+[tool.poetry.scripts]
+{{cookiecutter.repo_name}} = "{{cookiecutter.repo_name}}.main:cli"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

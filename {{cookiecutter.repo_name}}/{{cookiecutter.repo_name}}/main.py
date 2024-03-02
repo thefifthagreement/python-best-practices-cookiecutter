@@ -1,7 +1,8 @@
-import sys
+import click
 
 from {{cookiecutter.repo_name}}.{{cookiecutter.repo_name}} import fib
 
-if __name__ == "__main__":
-    n = int(sys.argv[1])
+@click.command()
+@click.argument('n', type=click.INT)
+def cli(n: int):
     print(fib(n))
