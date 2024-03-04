@@ -15,10 +15,9 @@ ENV LANG C.UTF-8 \
 
 WORKDIR /app
 
-COPY pyproject.toml poetry.lock {{cookiecutter.repo_name}}/README.md ./
+COPY pyproject.toml poetry.lock README.md ./
 
-# Using Buildkit cache mounts
-RUN --mount=type=cache,target=$POETRY_CACHE_DIR poetry install --without dev --no-root
+RUN mkdir .venv && poetry install --without dev --no-root  && rm -rf $POETRY_CACHE_DIR
 
 FROM python:{python_version}-slim-buster as runtime
 
@@ -36,8 +35,6 @@ USER appuser
 # Install application into container
 COPY {{cookiecutter.repo_name}} ./{{cookiecutter.repo_name}}
 
-RUN pip install poetry && poetry install --without dev && pip uninstall poetry
-
 # Run the executable
-ENTRYPOINT ["{{cookiecutter.repo_name}}"]
+ENTRYPOINT ["python", "-m", "{{cookiecutter.repo_name}}.main"]
 CMD ["10"]
