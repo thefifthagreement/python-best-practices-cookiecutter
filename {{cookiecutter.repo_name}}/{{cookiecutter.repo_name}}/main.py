@@ -1,6 +1,6 @@
 import click
 
-from bp_test.bp_test import fib
+from {{cookiecutter.repo_name}}.{{cookiecutter.repo_name}} import fib
 
 
 @click.command()
