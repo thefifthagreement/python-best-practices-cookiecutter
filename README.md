@@ -25,7 +25,7 @@ python3 -m pip install pipx
 python3 -m pipx ensurepath
 
 # Use cookiecutter to create project from this template
-pipx run cookiecutter gh:sourcery-ai/python-best-practices-cookiecutter
+pipx run cookiecutter git@github.com:thefifthagreement/python-best-practices-cookiecutter.git
 
 # Enter project directory
 cd <repo_name>
@@ -40,6 +40,5 @@ mkvirtualenv <repo_name>
 poetry install
 
 # Setup pre-commit and pre-push hooks
-pre-commit install -t pre-commit
-pre-commit install -t pre-push
+pre-commit install -t pre-commit && pre-commit install -t pre-push
 ```
